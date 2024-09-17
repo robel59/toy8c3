@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+</head>
+<body>
+    <h1>{{ blog.title }}</h1>
+    <p>{{ blog.description }}</p>
+    <p>Author: {{ blog.author }}</p>
+    <p>Date Posted: {{ blog.date_posted }}</p>
+    <!-- Render blog contents -->
+    {% for content in content1 %}
+        {% if content.content_type.model == 'content' %}
+            <p>{{ content.content_object.text }}</p>
+        {% elif content.content_type.model == 'image' %}
+            <p>{{ content.content_object.info }}</p>
+            <img src="{{ content.content_object.image.url }}" alt="Content Image">
+        {% elif content.content_type.model == 'quote' %}
+            <blockquote>
+                <p>{{ content.content_object.quote }}</p>
+                <footer>— {{ content.content_object.author }}</footer>
+            </blockquote>
+        {% elif content.content_type.model == 'codeblock' %}
+            <pre><code>{{ content.content_object.code }}</code></pre>
+        {% elif content.content_type.model == 'video' %}
+            <iframe src="{{ content.content_object.url }}" frameborder="0" allowfullscreen></iframe>
+        {% elif content.content_type.model == 'ad' %}
+            <div>{{ content.content_object.ad_code }}</div>
+        {% elif content.content_type.model == 'list' %}
+            <ul>
+                {% for item in content.content_object.items.splitlines %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        {% elif content.content_type.model == 'title' %}
+            <h2>{{ content.content_object.title }}</h2>
+        {% elif content.content_type.model == 'subtitle' %}
+            <h3>{{ content.content_object.subtitle }}</h3>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

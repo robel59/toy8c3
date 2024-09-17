@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inbox</title>
+</head>
+<body>
+    <h1>Inbox</h1>
+    <ul>
+        {% for email in emails %}
+            <li>
+                <strong>From:</strong> {{ email.fromAddress }}<br>
+                <strong>Subject:</strong> {{ email.subject }}<br>
+                <strong>Date:</strong> {{ email.receivedTime }}<br>
+                <strong> message : </strong>{{email.summary}}
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+
+    <ul>
+        {% for sent4 in sent %}
+            <li>
+                <strong>From:</strong> {{ sent4.fromAddress }}<br>
+                <strong>Subject:</strong> {{ sent4.subject }}<br>
+                <strong>Date:</strong> {{ sent4.receivedTime }}<br>
+                <strong> message : </strong>{{sent4.summary}}
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

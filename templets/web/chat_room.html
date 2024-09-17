@@ -1,0 +1,21 @@
+{% load static %}
+
+<!-- templates/chat/chat_room.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include your CSS and other head elements -->
+</head>
+<body>
+    <h1>Welcome to the Chat Room</h1>
+    <div id="chat-container">
+        <!-- Display chat messages here -->
+        {% for message in messages %}
+            <p>{{ message.user.username }}: {{ message.content }}</p>
+        {% endfor %}
+    </div>
+
+    <!-- Load the JavaScript for chat functionality -->
+    <script src="{% static 'room.js' %}"></script>
+</body>
+</html>

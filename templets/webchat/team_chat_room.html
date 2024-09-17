@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #chat-log {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ccc;
+        }
+        #chat-log .message {
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            max-width: 70%;
+        }
+        #chat-log .client-message {
+            background-color: #e6f7ff;
+            align-self: flex-end;
+        }
+        #chat-log .team-message {
+            background-color: #fffbe6;
+            align-self: flex-start;
+        }
+        #chat-log .system-message {
+            background-color: #d9f7be;
+            align-self: center;
+        }
+        #chat-input {
+            display: flex;
+            padding: 10px;
+        }
+        #chat-message-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #chat-message-submit {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        #chat-message-submit:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-log">
+            {% for message in messages %}
+                <div class="message {% if message.user.email == user.email %}client-message{% else %}team-message{% endif %}">
+                    <strong>{{ message.user.name }}:</strong> {{ message.content }}
+                </div>
+            {% endfor %}
+        </div>
+        <div id="chat-input">
+            <input id="chat-message-input" type="text" placeholder="Type a message..." />
+            <button id="chat-message-submit">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Capture the user email for WebSocket connection
+        const userEmail = '{{ user.email|escapejs }}';
+        const chatSocket = new WebSocket(`ws://${window.location.host}/ws/webchat/${userEmail}/`);
+
+        // Handle receiving messages
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            const message = data.message;
+            const sender = data.sender;
+            const chatLog = document.getElementById('chat-log');
+
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+
+            // Set the class based on sender type
+            if (sender === 'team') {
+                messageElement.classList.add('team-message');
+            } else if (sender === 'system') {
+                messageElement.classList.add('system-message');
+            } else {
+                messageElement.classList.add('client-message');
+            }
+
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatLog.appendChild(messageElement);
+            chatLog.scrollTop = chatLog.scrollHeight; // Scroll to the bottom
+        };
+
+        // Handle connection close
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        // Handle message input
+        document.getElementById('chat-message-input').focus();
+        document.getElementById('chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // Enter key
+                document.getElementById('chat-message-submit').click();
+            }
+        };
+
+        // Send message
+        document.getElementById('chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.getElementById('chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message,
+                'sender': 'team' // Sending user's email as the sender
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
+</body>
+</html>

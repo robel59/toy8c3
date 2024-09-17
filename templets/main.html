@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html>
+<head><script>{% load static %}</script><script>{% load custom_tags %}</script><script>var jsonDataww = {{ json_data|safe }};</script>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title id="title_1"></title>
+<meta content="" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="all,follow" name="robots"/>
+<!-- gLightbox gallery-->
+<link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet"/>
+<!-- Range slider-->
+<link href="{% static 'vendor/nouislider/nouislider.min.css' %}" rel="stylesheet"/>
+<!-- Choices CSS-->
+<link href="{% static 'vendor/choices.js/public/assets/styles/choices.min.css' %}" rel="stylesheet"/>
+<!-- Swiper slider-->
+<link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet"/>
+<!-- Google fonts-->
+<link href="{% static 'https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap' %}" rel="stylesheet"/>
+<link href="{% static 'https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap' %}" rel="stylesheet"/>
+<!-- theme stylesheet-->
+<link href="{% static 'css/style.default.css' %}" id="theme-stylesheet" rel="stylesheet"/>
+<!-- Custom stylesheet - for your changes-->
+<link href="{% static 'css/custom.css' %}" rel="stylesheet"/>
+<!-- Favicon-->
+<link href="{% static 'img/favicon.png' %}" rel="shortcut icon"/>
+</head>
+<div class="page-holder">
+<!-- navbar-->
+<header class="header bg-white">
+<div class="container px-lg-3">
+<nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" href="index.html"><span class="fw-bold text-uppercase text-dark">Boutique</span></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-end" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto">
+<li class="nav-item">
+<!-- Link--><a class="nav-link active" href="index.html">Home</a>
+</li>
+<li class="nav-item">
+<!-- Link--><a class="nav-link" href="shop.html">Shop</a>
+</li>
+<li class="nav-item">
+<!-- Link--><a class="nav-link" href="detail.html">Product detail</a>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="pagesDropdown">Pages</a>
+<div aria-labelledby="pagesDropdown" class="dropdown-menu mt-3 shadow-sm"><a class="dropdown-item border-0 transition-link" href="index.html">Homepage</a><a class="dropdown-item border-0 transition-link" href="shop.html">Category</a><a class="dropdown-item border-0 transition-link" href="detail.html">Product detail</a><a class="dropdown-item border-0 transition-link" href="cart.html">Shopping cart</a><a class="dropdown-item border-0 transition-link" href="checkout.html">Checkout</a></div>
+</li>
+</ul>
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small class="text-gray fw-normal">(2)</small></a></li>
+<li class="nav-item"><a class="nav-link" href="#!"> <i class="far fa-heart me-1"></i><small class="text-gray fw-normal"> (0)</small></a></li>
+<li class="nav-item"><a class="nav-link" href="#!"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Login</a></li>
+</ul>
+</div>
+</nav>
+</div>
+</header>
+<!--  Modal -->
+<div class="modal fade" id="productView" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content overflow-hidden border-0">
+<button aria-label="Close" class="btn-close p-4 position-absolute top-0 end-0 z-index-20 shadow-0" data-bs-dismiss="modal" type="button"></button>
+<div class="modal-body p-0">
+<div class="row align-items-stretch">
+<div class="col-lg-6 p-lg-0"><a class="glightbox product-view d-block h-100 bg-cover bg-center" data-gallery="gallery1" data-glightbox="Red digital smartwatch" href="img/product-5.jpg" style="background: url(img/product-5.jpg)"></a><a class="glightbox d-none" data-gallery="gallery1" data-glightbox="Red digital smartwatch" href="img/product-5-alt-1.jpg"></a><a class="glightbox d-none" data-gallery="gallery1" data-glightbox="Red digital smartwatch" href="img/product-5-alt-2.jpg"></a></div>
+<div class="col-lg-6">
+<div class="p-4 my-md-4">
+<ul class="list-inline mb-2">
+<li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
+<li class="list-inline-item m-0 1"><i class="fas fa-star small text-warning"></i></li>
+<li class="list-inline-item m-0 2"><i class="fas fa-star small text-warning"></i></li>
+<li class="list-inline-item m-0 3"><i class="fas fa-star small text-warning"></i></li>
+<li class="list-inline-item m-0 4"><i class="fas fa-star small text-warning"></i></li>
+</ul>
+<h2 class="h4" id="h2_1"></h2>
+<p class="text-muted" id="p_1"></p>
+<p class="text-muted" id="test"></p>
+<p class="text-sm mb-4" id="p_2"></p>
+<h1 id="testing"> </h1>
+<div class="row align-items-stretch mb-4 gx-0">
+<div class="col-sm-7">
+<div class="border d-flex align-items-center justify-content-between py-1 px-3"><span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
+<div class="quantity">
+<button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
+<input class="form-control border-0 shadow-0 p-0" type="text" value="1"/>
+<button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
+</div>
+</div>
+</div>
+<div class="col-sm-5"><a class="btn btn-dark btn-sm w-100 h-100 d-flex align-items-center justify-content-center px-0" href="cart.html">Add to cart</a></div>
+</div><a class="btn btn-link text-dark text-decoration-none p-0" href="#!"><i class="far fa-heart me-2"></i>Add to wish list</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- HERO SECTION-->
+<div class="container">
+<section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(img/hero-banner-alt.jpg)">
+<div class="container py-5">
+<div class="row px-4 px-lg-5">
+<div class="col-lg-6">
+<p class="text-muted small text-uppercase mb-2" id="p_3"></p>
+<h1 class="h2 text-uppercase mb-3" id="h1_1"></h1><a class="btn btn-dark" href="shop.html">Browse collections</a>
+
+</div>
+</div>
+</div>
+</section>
+<!-- CATEGORIES SECTION-->
+<section class="pt-5">
+<header class="text-center">
+<p class="small text-muted small text-uppercase mb-1" id="p_4"></p>
+<h2 class="h5 text-uppercase mb-4" id="h2_2"></h2>
+</header>
+<div class="row">
+<div class="col-md-4"><a class="category-item" href="shop.html"><img alt="" class="img-fluid" src="{% get_image_url 8 %}"/><strong class="category-item-title">Clothes</strong></a>
+</div>
+<div class="col-md-4"><a class="category-item mb-4" href="shop.html"><img alt="" class="img-fluid" src="{% get_image_url 9 %}"/><strong class="category-item-title">Shoes</strong></a><a class="category-item" href="shop.html"><img alt="" class="img-fluid" src="{% get_image_url 10 %}"/><strong class="category-item-title">Watches</strong></a>
+</div>
+<div class="col-md-4"><a class="category-item" href="shop.html"><img alt="" class="img-fluid" src="{% get_image_url 11 %}"/><strong class="category-item-title">Electronics</strong></a>
+</div>
+</div>
+</section>
+<!-- TRENDING PRODUCTS-->
+<section class="py-5">
+<header>
+<p class="small text-muted small text-uppercase mb-1" id="p_5"></p>
+<h2 class="h5 text-uppercase mb-4" id="h2_3"></h2>
+</header>
+<!--
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="product text-center">
+                <div class="position-relative mb-3">
+                  <div class="badge text-white bg-"></div><a class="d-block" href="detail.html"><img class="img-fluid w-100" src="img/product-1.jpg" alt="..."></a>
+                  <div class="product-overlay">
+                    <ul class="mb-0 list-inline">
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i class="far fa-heart"></i></a></li>
+                      <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
+                      <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <h6> <a class="reset-anchor" href="detail.html">Kui Ye Chen’s AirPods</a></h6>
+                <p class="small text-muted">$250</p>
+              </div>
+            </div>  
+          </div>
+        -->
+</section>
+<!-- SERVICES-->
+<section class="py-5 bg-light">
+<div class="container">
+<div class="row text-center gy-3">
+<div class="col-lg-4">
+<div class="d-inline-block">
+<div class="d-flex align-items-end">
+<svg class="svg-icon svg-icon-big svg-icon-light">
+<use xlink:href="#delivery-time-1"> </use>
+</svg>
+<div class="text-start ms-3">
+<h6 class="text-uppercase mb-1" id="h6_1"></h6>
+<p class="text-sm mb-0 text-muted" id="p_6"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="d-inline-block">
+<div class="d-flex align-items-end">
+<svg class="svg-icon svg-icon-big svg-icon-light">
+<use xlink:href="#helpline-24h-1"> </use>
+</svg>
+<div class="text-start ms-3">
+<h6 class="text-uppercase mb-1" id="h6_2"></h6>
+<p class="text-sm mb-0 text-muted" id="p_7"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="d-inline-block">
+<div class="d-flex align-items-end">
+<svg class="svg-icon svg-icon-big svg-icon-light">
+<use xlink:href="#label-tag-1"> </use>
+</svg>
+<div class="text-start ms-3">
+<h6 class="text-uppercase mb-1" id="h6_3"></h6>
+<p class="text-sm mb-0 text-muted" id="p_8"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NEWSLETTER-->
+<section class="py-5">
+<div class="container p-0">
+<div class="row gy-3">
+<div class="col-lg-6">
+<h5 class="text-uppercase" id="h5_1"></h5>
+<p class="text-sm text-muted mb-0" id="p_9"></p>
+</div>
+<div class="col-lg-6">
+<form action="#">
+<div class="input-group">
+<input aria-describedby="button-addon2" class="form-control form-control-lg" placeholder="Enter your email address" type="email"/>
+<button class="btn btn-dark" id="button-addon2" type="submit">Subscribe</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer class="bg-dark text-white">
+<div class="container py-4">
+<div class="row py-5">
+<div class="col-md-4 mb-3 mb-md-0">
+<h6 class="text-uppercase mb-3" id="h6_4"></h6>
+<ul class="list-unstyled mb-0">
+<li><p id="p_10"></p></li>
+<li><p id="p_11"></p></li>
+<li><p id="p_12"></p></li>
+<li><p id="p_13"></p></li>
+</ul>
+</div>
+<div class="col-md-4 mb-3 mb-md-0">
+<h6 class="text-uppercase mb-3" id="h6_5"></h6>
+<ul class="list-unstyled mb-0">
+<li><a class="footer-link" href="#!">What We Do</a></li>
+<li><a class="footer-link" href="#!">Available Services</a></li>
+<li><a class="footer-link" href="#!">Latest Posts</a></li>
+<li><a class="footer-link" href="#!">FAQs</a></li>
+</ul>
+</div>
+<!--
+            <div class="col-md-4">
+              <h6 class="text-uppercase mb-3">Social media</h6>
+              <ul class="list-unstyled mb-0">
+                <li><a class="footer-link" href="#!">Twitter</a></li>
+                <li><a class="footer-link" href="#!">Instagram</a></li>
+                <li><a class="footer-link" href="#!">Tumblr</a></li>
+                <li><a class="footer-link" href="#!">Pinterest</a></li>
+              </ul>
+            </div>
+          </div>
+          -->
+<div class="border-top pt-4" style="border-color: #1d1d1d !important">
+<div class="row">
+<div class="col-md-6 text-center text-md-start">
+<p class="small text-muted mb-0" id="p_14"></p>
+</div>
+<div class="col-md-6 text-center text-md-end">
+<p class="small text-muted mb-0" id="p_15"></p>
+<!-- If you want to remove the backlink, please purchase the Attribution-Free License. See details in readme.txt or license.txt. Thanks!-->
+</div>
+</div>
+</div>
+</div>
+</div></footer>
+<!-- JavaScript files-->
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'vendor/nouislider/nouislider.min.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'vendor/choices.js/public/assets/scripts/choices.min.js' %}"></script>
+<script src="{% static 'js/front.js' %}"></script>
+<script>
+        // ------------------------------------------------------- //
+        //   Inject SVG Sprite - 
+        //   see more here 
+        //   https://css-tricks.com/ajaxing-svg-sprite/
+        // ------------------------------------------------------ //
+        function injectSvgSprite(path) {
+        
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", path, true);
+            ajax.send();
+            ajax.onload = function(e) {
+            var div = document.createElement("div");
+            div.className = 'd-none';
+            div.innerHTML = ajax.responseText;
+            document.body.insertBefore(div, document.body.childNodes[0]);
+            }
+        }
+        // this is set to BootstrapTemple website as you cannot 
+        // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+        // while using file:// protocol
+        // pls don't forget to change to your domain :)
+        injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+        
+      </script>
+<!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+<link crossorigin="anonymous" href="{% static 'https://use.fontawesome.com/releases/v5.7.1/css/all.css' %}" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet"/>
+</div>
+<script src="{% static 'webfunction.js' %}"></script><script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Iterate over each key in the JSON data
+        for (var key in jsonDataww) {
+            if (jsonDataww.hasOwnProperty(key)) {
+                var element = document.getElementById(key);
+                if (element) {
+                    if(key.startsWith("a")){
+                        element.href = jsonDataww[key['link']];
+                    }else{
+                        element.textContent = jsonDataww[key];
+                    }
+                }
+            }
+        }
+    });
+    </script></body>
+</html>

@@ -1,0 +1,16 @@
+<!-- chat_list.html -->
+<ul class="chat-list">
+    {% for chat_room in chat_rooms %}
+        <li>
+            <a href="{% url 'web:chat_room' chat_room.id %}">
+                {{ chat_room.name }} _last login {{chat_room.last_login}}
+                {{chat_room.online.first.is_online}}
+                {% if chat_room.online.first.is_online %}
+                        (Online)
+                    {% else %}
+                        (Offline)
+                {% endif %}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

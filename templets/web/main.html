@@ -1,0 +1,666 @@
+{% load static %}
+{% load custom_tags %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<title>Chain App Dev - App Landing Page HTML5 Template</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap core CSS -->
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+<!--
+
+TemplateMo 570 Chain App Dev
+
+https://templatemo.com/tm-570-chain-app-dev
+
+-->
+<!-- Additional CSS Files -->
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet"/>
+<link href="{% static 'assets/css/templatemo-chain-app-dev.css' %}" rel="stylesheet"/>
+<link href="{% static 'assets/css/animated.css' %}" rel="stylesheet"/>
+<link href="{% static 'assets/css/owl.css' %}" rel="stylesheet"/>
+<script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                var textData = data.text;
+
+                for (var key in textData) {
+                    var element = document.getElementById(key);
+                    if (element) {
+                        element.innerHTML = textData[key];
+                    }
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    });
+    </script>
+    </script></head>
+<body>
+<!-- ***** Preloader Start ***** -->
+<div class="js-preloader" id="js-preloader">
+<div class="preloader-inner">
+<span class="dot"></span>
+<div class="dots">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</div>
+<!-- ***** Preloader End ***** -->
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky wow slideInDown" data-wow-delay="0s" data-wow-duration="0.75s">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<nav class="main-nav">
+<!-- ***** Logo Start ***** -->
+<a class="logo" href="index.html">
+<img alt="Chain App Dev" src="{% static 'assets/{% get_image_url 1 %}' %}"/>
+</a>
+<!-- ***** Logo End ***** -->
+<!-- ***** Menu Start ***** -->
+<ul class="nav">
+<li class="scroll-to-section"><a class="active" href="#top">Home</a></li>
+<li class="scroll-to-section"><a href="#services">Services</a></li>
+<li class="scroll-to-section"><a href="#about">About</a></li>
+<li class="scroll-to-section"><a href="#pricing">Pricing</a></li>
+<li class="scroll-to-section"><a href="#newsletter">Newsletter</a></li>
+              {% if logstat %}
+              <li><div class="gradient-button"><a href="{% url 'web:logout' %}"><i class="fa fa-sign-out-alt"></i>Logout</a></div></li> 
+              {% else %}
+              <li><div class="gradient-button"><a href="#modal" id="modal_trigger"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li> 
+              {% endif %}
+            </ul>
+<a class="menu-trigger">
+<span>Menu</span>
+</a>
+<!-- ***** Menu End ***** -->
+</nav>
+</div>
+</div>
+</div>
+</header>
+<!-- ***** Header Area End ***** -->
+<div class="main-banner wow fadeIn" data-wow-delay="0.5s" data-wow-duration="1s" id="top">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="row">
+<div class="col-lg-6 align-self-center">
+<div class="left-content show-up header-text wow fadeInLeft" data-wow-delay="1s" data-wow-duration="1s">
+<div class="row">
+<div class="col-lg-12">
+<!-- Add ID to the header text -->
+<h2 id="h2_1"></h2>
+<!-- Add ID to the paragraph -->
+<p id="p_1"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="right-image wow fadeInRight" data-wow-delay="0.5s" data-wow-duration="1s">
+<!-- Add ID directly to the image -->
+<img alt="" id="mainImage" src=""/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="services section" id="services">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 offset-lg-2">
+<div class="section-heading wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s">
+<!-- Add ID to the heading -->
+<h4 id="h4_1"></h4>
+<!-- Add ID to the heading line image -->
+<img alt="" id="headingLineImage" src="{% static 'assets/images/heading-line-dec.png' %}"/>
+<!-- Add ID to the paragraph -->
+<p id="p_2"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="services section" id="services">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 offset-lg-2">
+<div class="section-heading wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s">
+<h4 id="h4_2"></h4>
+<img alt="" src="{% static 'assets/images/heading-line-dec.png' %}"/>
+<p id="p_3"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-3">
+<div class="service-item first-service">
+<div class="icon"></div>
+<h4 id="h4_3"></h4>
+<p id="p_4"></p>
+<div class="text-button">
+<a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-lg-3">
+<div class="service-item second-service">
+<div class="icon"></div>
+<h4 id="h4_4"></h4>
+<p id="p_5"></p>
+<div class="text-button">
+<a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-lg-3">
+<div class="service-item third-service">
+<div class="icon"></div>
+<h4 id="h4_5"></h4>
+<p id="p_6"></p>
+<div class="text-button">
+<a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-lg-3">
+<div class="service-item fourth-service">
+<div class="icon"></div>
+<h4 id="h4_6"></h4>
+<p id="p_7"></p>
+<div class="text-button">
+<a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="about-us section" id="about">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 align-self-center">
+<div class="section-heading">
+<h4 id="h4_7"></h4>
+<img alt="" src="{% static 'assets/images/heading-line-dec.png' %}"/>
+<p id="p_8"></p>
+</div>
+<div class="row">
+<div class="col-lg-6">
+<div class="box-item">
+<h4 id="h4_8"></h4>
+<p id="p_9"></p>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="box-item">
+<h4 id="h4_9"></h4>
+<p id="p_10"></p>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="box-item">
+<h4 id="h4_10"></h4>
+<p id="p_11"></p>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="box-item">
+<h4 id="h4_11"></h4>
+<p id="p_12"></p>
+</div>
+</div>
+<div class="col-lg-12">
+<p id="p_13"></p>
+<div class="gradient-button">
+<a href="#">Start 14-Day Free Trial</a>
+</div>
+<span>*No Credit Card Required</span>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="right-image">
+<img alt="" src="{% static 'assets/images/about-right-dec.png' %}"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="the-clients" id="clients">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 offset-lg-2">
+<div class="section-heading">
+<h4 id="h4_12"></h4>
+<img alt="" src="{% static 'assets/images/heading-line-dec.png' %}"/>
+<p id="p_14"></p>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="naccs">
+<div class="grid">
+<div class="row">
+<div class="col-lg-7 align-self-center">
+<div class="menu">
+<div class="first-thumb active">
+<div class="thumb">
+<div class="row">
+<div class="col-lg-4 col-sm-4 col-12">
+<h4 id="h4_13"></h4>
+<span class="date">30 November 2021</span>
+</div>
+<div class="col-lg-4 col-sm-4 d-none d-sm-block">
+<span class="category">Financial Apps</span>
+</div>
+<div class="col-lg-4 col-sm-4 col-12">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<span class="rating">4.8</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="thumb">
+<div class="row">
+<div class="col-lg-4 col-sm-4 col-12">
+<h4 id="h4_14"></h4>
+<span class="date">29 November 2021</span>
+</div>
+<div class="col-lg-4 col-sm-4 d-none d-sm-block">
+<span class="category">Digital Business</span>
+</div>
+<div class="col-lg-4 col-sm-4 col-12">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<span class="rating">4.5</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="thumb">
+<div class="row">
+<div class="col-lg-4 col-sm-4 col-12">
+<h4 id="h4_15"></h4>
+<span class="date">27 November 2021</span>
+</div>
+<div class="col-lg-4 col-sm-4 d-none d-sm-block">
+<span class="category">Business &amp; Economics</span>
+</div>
+<div class="col-lg-4 col-sm-4 col-12">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<span class="rating">4.7</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="thumb">
+<div class="row">
+<div class="col-lg-4 col-sm-4 col-12">
+<h4 id="h4_16"></h4>
+<span class="date">24 November 2021</span>
+</div>
+<div class="col-lg-4 col-sm-4 d-none d-sm-block">
+<span class="category">New App Ecosystem</span>
+</div>
+<div class="col-lg-4 col-sm-4 col-12">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<span class="rating">3.9</span>
+</div>
+</div>
+</div>
+</div>
+<div class="last-thumb">
+<div class="thumb">
+<div class="row">
+<div class="col-lg-4 col-sm-4 col-12">
+<h4 id="h4_17"></h4>
+<span class="date">21 November 2021</span>
+</div>
+<div class="col-lg-4 col-sm-4 d-none d-sm-block">
+<span class="category">Web Development</span>
+</div>
+<div class="col-lg-4 col-sm-4 col-12">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<span class="rating">4.3</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-5">
+<ul class="nacc">
+<li class="active">
+<div>
+<div class="thumb">
+<div class="row">
+<div class="col-lg-12">
+<div class="client-content">
+<img alt="" src="{% static 'assets/images/quote.png' %}"/>
+<p id="p_15"></p>
+</div>
+<div class="down-content">
+<img alt="" src="{% static 'assets/images/client-image.jpg' %}"/>
+<div class="right-content">
+<h4 id="h4_18"></h4>
+<span>CEO of David Company</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div>
+<div class="thumb">
+<div class="row">
+<div class="col-lg-12">
+<div class="client-content">
+<img alt="" src="{% static 'assets/images/quote.png' %}"/>
+<p id="p_16"></p>
+</div>
+<div class="down-content">
+<img alt="" src="{% static 'assets/images/client-image.jpg' %}"/>
+<div class="right-content">
+<h4 id="h4_19"></h4>
+<span>CTO of Digital Company</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div>
+<div class="thumb">
+<div class="row">
+<div class="col-lg-12">
+<div class="client-content">
+<img alt="" src="{% static 'assets/images/quote.png' %}"/>
+<p id="p_17"></p>
+</div>
+<div class="down-content">
+<img alt="" src="{% static 'assets/images/client-image.jpg' %}"/>
+<div class="right-content">
+<h4 id="h4_20"></h4>
+<span>Founder of Catherina Co.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div>
+<div class="thumb">
+<div class="row">
+<div class="col-lg-12">
+<div class="client-content">
+<img alt="" src="{% static 'assets/images/quote.png' %}"/>
+<p id="p_18"></p>
+</div>
+<div class="down-content">
+<img alt="" src="{% static 'assets/images/client-image.jpg' %}"/>
+<div class="right-content">
+<h4 id="h4_21"></h4>
+<span>Manager, Digital Company</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div>
+<div class="thumb">
+<div class="row">
+<div class="col-lg-12">
+<div class="client-content">
+<img alt="" src="{% static 'assets/images/quote.png' %}"/>
+<p id="p_19"></p>
+</div>
+<div class="down-content">
+<img alt="" src="{% static 'assets/images/client-image.jpg' %}"/>
+<div class="right-content">
+<h4 id="h4_22"></h4>
+<span>CTO, Amber Do Company</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pricing-tables" id="pricing">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 offset-lg-2">
+<div class="section-heading">
+<h4 id="h4_23"></h4>
+<img alt="" src="{% static 'assets/images/heading-line-dec.png' %}"/>
+<p id="p_20"></p>
+</div>
+</div>
+        {% for service in services %}
+        <div class="col-lg-4">
+<div class="pricing-item-regular">
+<span class="price">{{service.price}}</span>
+<h4 id="h4_24"></h4>
+<div class="icon">
+<img alt="{{ service.title }}" src="{{ service.image.url }}"/>
+</div>
+<p id="p_21"></p>
+<div class="border-button">
+<button class="btn btn-primary" data-bs-target="#orderModal" data-bs-toggle="modal" type="button">
+
+              Purchase This Plan Now
+              </button>
+</div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="orderModalLabel" class="modal fade" id="orderModal" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="h5_1"></h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<form id="orderForm">
+                          {% csrf_token %}
+                          <input name="service_id" type="hidden" value="{{ service.id }}"/>
+<div class="mb-3">
+<label class="form-label" for="name">Name:</label>
+<input class="form-control" name="name" required="" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="phone_number">Phone Number:</label>
+<input class="form-control" name="phone_number" required="" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="email">Email:</label>
+<input class="form-control" name="email" required="" type="email"/>
+</div>
+<button class="btn btn-primary" type="submit">Place Order</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+        {% endfor %}
+        <div class="col-lg-4">
+<div class="pricing-item-regular">
+<span class="price">$12</span>
+<h4 id="h4_25"></h4>
+<div class="icon">
+<img alt="" src="{% static 'assets/images/pricing-table-01.png' %}"/>
+</div>
+<ul>
+<li>Lorem Ipsum Dolores</li>
+<li>20 TB of Storage</li>
+<li class="non-function">Life-time Support</li>
+<li class="non-function">Premium Add-Ons</li>
+<li class="non-function">Fastest Network</li>
+<li class="non-function">More Options</li>
+</ul>
+<div class="border-button">
+<a href="#">Purchase This Plan Now</a>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="pricing-item-pro">
+<span class="price">$25</span>
+<h4 id="h4_26"></h4>
+<div class="icon">
+<img alt="" src="{% static 'assets/images/pricing-table-01.png' %}"/>
+</div>
+<ul>
+<li>Lorem Ipsum Dolores</li>
+<li>50 TB of Storage</li>
+<li>Life-time Support</li>
+<li>Premium Add-Ons</li>
+<li class="non-function">Fastest Network</li>
+<li class="non-function">More Options</li>
+</ul>
+<div class="border-button">
+<a href="#">Purchase This Plan Now</a>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="pricing-item-regular">
+<span class="price">$66</span>
+<h4 id="h4_27"></h4>
+<div class="icon">
+<img alt="" src="{% static 'assets/images/pricing-table-01.png' %}"/>
+</div>
+<ul>
+<li>Lorem Ipsum Dolores</li>
+<li>120 TB of Storage</li>
+<li>Life-time Support</li>
+<li>Premium Add-Ons</li>
+<li>Fastest Network</li>
+<li>More Options</li>
+</ul>
+<div class="border-button">
+<a href="#">Purchase This Plan Now</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer id="newsletter">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 offset-lg-2">
+<div class="section-heading">
+<h4 id="h4_28"></h4>
+</div>
+</div>
+<div class="col-lg-6 offset-lg-3">
+<form id="search" method="post">
+<div class="row">
+<div class="col-lg-6 col-sm-6">
+<fieldset>
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                </fieldset>
+</div>
+<div class="col-lg-6 col-sm-6">
+<fieldset>
+<button class="main-button" type="submit">Subscribe Now <i class="fa fa-angle-right"></i></button>
+</fieldset>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-3">
+<div class="footer-widget">
+<h4 id="h4_29"></h4>
+<p id="p_22"></p>
+<p id="p_23"></p>
+<p id="p_24"></p>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="copyright-text">
+<p id="p_25"></p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Other content of the page -->
+<!-- Replace the modal content with the custom template tag -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+<script src="{% static 'assets/js/animation.js' %}"></script>
+<script src="{% static 'assets/js/imagesloaded.js' %}"></script>
+<script src="{% static 'assets/js/popup.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+
+
+
+  {% render_login_modal logstat chat_id %}
+  <script src="{% static 'webfunction.js' %}"></script>
+</body>
+</html>

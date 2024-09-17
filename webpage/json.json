@@ -1,0 +1,940 @@
+{
+    "texts": [
+        {
+            "id": "text_1",
+            "text": "UpConstruction Bootstrap Template - Blog",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_2",
+            "text": "UpConstruction",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_3",
+            "text": ".",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_4",
+            "text": "Dropdown",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_5",
+            "text": "Deep Dropdown",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_6",
+            "text": "Blog",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_7",
+            "text": "Blog",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "list"
+        },
+        {
+            "id": "text_8",
+            "text": "December 12",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_9",
+            "text": "Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_10",
+            "text": "John Doe",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_11",
+            "text": "/",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_12",
+            "text": "Politics",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_13",
+            "text": "Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_14",
+            "text": "Read More",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_15",
+            "text": "March 19",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_16",
+            "text": "Nisi magni odit consequatur autem nulla dolorem",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_17",
+            "text": "Julia Parker",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_18",
+            "text": "/",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_19",
+            "text": "Economics",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_20",
+            "text": "Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_21",
+            "text": "Read More",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_22",
+            "text": "June 24",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_23",
+            "text": "Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_24",
+            "text": "Maria Doe",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_25",
+            "text": "/",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_26",
+            "text": "Sports",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_27",
+            "text": "Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_28",
+            "text": "Read More",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_29",
+            "text": "August 05",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_30",
+            "text": "Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem.",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_31",
+            "text": "Maria Doe",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_32",
+            "text": "/",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_33",
+            "text": "Sports",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_34",
+            "text": "Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_35",
+            "text": "Read More",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_36",
+            "text": "September 17",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_37",
+            "text": "Accusamus quaerat aliquam qui debitis facilis consequatur",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_38",
+            "text": "John Parker",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_39",
+            "text": "/",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_40",
+            "text": "Politics",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_41",
+            "text": "In itaque assumenda aliquam voluptatem qui temporibus iusto nisi quia. Autem vitae quas aperiam nesciunt mollitia tempora odio omnis. Ipsa odit sit ut amet necessitatibus. Quo ullam ut corrupti autem consequuntur totam dolorem.",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_42",
+            "text": "Read More",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_43",
+            "text": "December 07",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_44",
+            "text": "Distinctio provident quibusdam numquam aperiam aut",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_45",
+            "text": "Julia White",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_46",
+            "text": "/",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_47",
+            "text": "Economics",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_48",
+            "text": "Expedita et temporibus eligendi enim molestiae est architecto praesentium dolores. Illo laboriosam officiis quis. Labore officia quia sit voluptatem nisi est dignissimos totam. Et voluptate et consectetur voluptatem id dolor magni impedit. Omnis dolores sit.",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_49",
+            "text": "Read More",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_50",
+            "text": "UpConstruction",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_51",
+            "text": "A108 Adam Street",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_52",
+            "text": "NY 535022, USA",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_53",
+            "text": "Phone:",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_54",
+            "text": "+1 5589 55488 55",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_55",
+            "text": "Email:",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_56",
+            "text": "info@example.com",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "paragraph"
+        },
+        {
+            "id": "text_57",
+            "text": "Useful Links",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_58",
+            "text": "Our Services",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_59",
+            "text": "Hic solutasetp",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_60",
+            "text": "Nobis illum",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "header"
+        },
+        {
+            "id": "text_61",
+            "text": "\u00a9 Copyright",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_62",
+            "text": "UpConstruction",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_63",
+            "text": ". All Rights Reserved",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        },
+        {
+            "id": "text_64",
+            "text": "Designed by",
+            "color": "no color",
+            "text_style": "no style",
+            "type": "other"
+        }
+    ],
+    "images": [
+        {
+            "id": "image_65",
+            "imgid": 1,
+            "src": "/media/images/constraction/UpConstruction/assets/img/blog/blog-1.jpg"
+        },
+        {
+            "id": "image_66",
+            "imgid": 2,
+            "src": "/media/images/constraction/UpConstruction/assets/img/blog/blog-2.jpg"
+        },
+        {
+            "id": "image_67",
+            "imgid": 3,
+            "src": "/media/images/constraction/UpConstruction/assets/img/blog/blog-3.jpg"
+        },
+        {
+            "id": "image_68",
+            "imgid": 4,
+            "src": "/media/images/constraction/UpConstruction/assets/img/blog/blog-4.jpg"
+        },
+        {
+            "id": "image_69",
+            "imgid": 5,
+            "src": "/media/images/constraction/UpConstruction/assets/img/blog/blog-5.jpg"
+        },
+        {
+            "id": "image_70",
+            "imgid": 6,
+            "src": "/media/images/constraction/UpConstruction/assets/img/blog/blog-6.jpg"
+        }
+    ],
+    "links": [
+        {
+            "id": "link_71",
+            "name": "Home",
+            "link": "/index.html/"
+        },
+        {
+            "id": "link_72",
+            "name": "About",
+            "link": "/about.html/"
+        },
+        {
+            "id": "link_73",
+            "name": "Services",
+            "link": "/services.html/"
+        },
+        {
+            "id": "link_74",
+            "name": "Projects",
+            "link": "/projects.html/"
+        },
+        {
+            "id": "link_75",
+            "name": "Blog",
+            "link": "/blog.html/"
+        },
+        {
+            "id": "link_76",
+            "name": "Dropdown 1",
+            "link": "/#/"
+        },
+        {
+            "id": "link_77",
+            "name": "Deep Dropdown 1",
+            "link": "/#/"
+        },
+        {
+            "id": "link_78",
+            "name": "Deep Dropdown 2",
+            "link": "/#/"
+        },
+        {
+            "id": "link_79",
+            "name": "Deep Dropdown 3",
+            "link": "/#/"
+        },
+        {
+            "id": "link_80",
+            "name": "Deep Dropdown 4",
+            "link": "/#/"
+        },
+        {
+            "id": "link_81",
+            "name": "Deep Dropdown 5",
+            "link": "/#/"
+        },
+        {
+            "id": "link_82",
+            "name": "Dropdown 2",
+            "link": "/#/"
+        },
+        {
+            "id": "link_83",
+            "name": "Dropdown 3",
+            "link": "/#/"
+        },
+        {
+            "id": "link_84",
+            "name": "Dropdown 4",
+            "link": "/#/"
+        },
+        {
+            "id": "link_85",
+            "name": "Contact",
+            "link": "/contact.html/"
+        },
+        {
+            "id": "link_86",
+            "name": "Home",
+            "link": "/index.html/"
+        },
+        {
+            "id": "link_87",
+            "name": "1",
+            "link": "/#/"
+        },
+        {
+            "id": "link_88",
+            "name": "2",
+            "link": "/#/"
+        },
+        {
+            "id": "link_89",
+            "name": "3",
+            "link": "/#/"
+        },
+        {
+            "id": "link_90",
+            "name": "Home",
+            "link": "/#/"
+        },
+        {
+            "id": "link_91",
+            "name": "About us",
+            "link": "/#/"
+        },
+        {
+            "id": "link_92",
+            "name": "Services",
+            "link": "/#/"
+        },
+        {
+            "id": "link_93",
+            "name": "Terms of service",
+            "link": "/#/"
+        },
+        {
+            "id": "link_94",
+            "name": "Privacy policy",
+            "link": "/#/"
+        },
+        {
+            "id": "link_95",
+            "name": "Web Design",
+            "link": "/#/"
+        },
+        {
+            "id": "link_96",
+            "name": "Web Development",
+            "link": "/#/"
+        },
+        {
+            "id": "link_97",
+            "name": "Product Management",
+            "link": "/#/"
+        },
+        {
+            "id": "link_98",
+            "name": "Marketing",
+            "link": "/#/"
+        },
+        {
+            "id": "link_99",
+            "name": "Graphic Design",
+            "link": "/#/"
+        },
+        {
+            "id": "link_100",
+            "name": "Molestiae accusamus iure",
+            "link": "/#/"
+        },
+        {
+            "id": "link_101",
+            "name": "Excepturi dignissimos",
+            "link": "/#/"
+        },
+        {
+            "id": "link_102",
+            "name": "Suscipit distinctio",
+            "link": "/#/"
+        },
+        {
+            "id": "link_103",
+            "name": "Dilecta",
+            "link": "/#/"
+        },
+        {
+            "id": "link_104",
+            "name": "Sit quas consectetur",
+            "link": "/#/"
+        },
+        {
+            "id": "link_105",
+            "name": "Ipsam",
+            "link": "/#/"
+        },
+        {
+            "id": "link_106",
+            "name": "Laudantium dolorum",
+            "link": "/#/"
+        },
+        {
+            "id": "link_107",
+            "name": "Dinera",
+            "link": "/#/"
+        },
+        {
+            "id": "link_108",
+            "name": "Trodelas",
+            "link": "/#/"
+        },
+        {
+            "id": "link_109",
+            "name": "Flexo",
+            "link": "/#/"
+        },
+        {
+            "id": "link_110",
+            "name": "BootstrapMade",
+            "link": "/https://bootstrapmade.com//"
+        }
+    ],
+    "divs": [
+        {
+            "id": "div_111",
+            "background_color": ""
+        },
+        {
+            "id": "div_112",
+            "background_color": ""
+        },
+        {
+            "id": "div_113",
+            "background_color": ""
+        },
+        {
+            "id": "div_114",
+            "background_color": ""
+        },
+        {
+            "id": "div_115",
+            "background_color": ""
+        },
+        {
+            "id": "div_116",
+            "background_color": ""
+        },
+        {
+            "id": "div_117",
+            "background_color": ""
+        },
+        {
+            "id": "div_118",
+            "background_color": ""
+        },
+        {
+            "id": "div_119",
+            "background_color": ""
+        },
+        {
+            "id": "div_120",
+            "background_color": ""
+        },
+        {
+            "id": "div_121",
+            "background_color": ""
+        },
+        {
+            "id": "div_122",
+            "background_color": ""
+        },
+        {
+            "id": "div_123",
+            "background_color": ""
+        },
+        {
+            "id": "div_124",
+            "background_color": ""
+        },
+        {
+            "id": "div_125",
+            "background_color": ""
+        },
+        {
+            "id": "div_126",
+            "background_color": ""
+        },
+        {
+            "id": "div_127",
+            "background_color": ""
+        },
+        {
+            "id": "div_128",
+            "background_color": ""
+        },
+        {
+            "id": "div_129",
+            "background_color": ""
+        },
+        {
+            "id": "div_130",
+            "background_color": ""
+        },
+        {
+            "id": "div_131",
+            "background_color": ""
+        },
+        {
+            "id": "div_132",
+            "background_color": ""
+        },
+        {
+            "id": "div_133",
+            "background_color": ""
+        },
+        {
+            "id": "div_134",
+            "background_color": ""
+        },
+        {
+            "id": "div_135",
+            "background_color": ""
+        },
+        {
+            "id": "div_136",
+            "background_color": ""
+        },
+        {
+            "id": "div_137",
+            "background_color": ""
+        },
+        {
+            "id": "div_138",
+            "background_color": ""
+        },
+        {
+            "id": "div_139",
+            "background_color": ""
+        },
+        {
+            "id": "div_140",
+            "background_color": ""
+        },
+        {
+            "id": "div_141",
+            "background_color": ""
+        },
+        {
+            "id": "div_142",
+            "background_color": ""
+        },
+        {
+            "id": "div_143",
+            "background_color": ""
+        },
+        {
+            "id": "div_144",
+            "background_color": ""
+        },
+        {
+            "id": "div_145",
+            "background_color": ""
+        },
+        {
+            "id": "div_146",
+            "background_color": ""
+        },
+        {
+            "id": "div_147",
+            "background_color": ""
+        },
+        {
+            "id": "div_148",
+            "background_color": ""
+        },
+        {
+            "id": "div_149",
+            "background_color": ""
+        },
+        {
+            "id": "div_150",
+            "background_color": ""
+        },
+        {
+            "id": "div_151",
+            "background_color": ""
+        },
+        {
+            "id": "div_152",
+            "background_color": ""
+        },
+        {
+            "id": "div_153",
+            "background_color": ""
+        },
+        {
+            "id": "div_154",
+            "background_color": ""
+        },
+        {
+            "id": "div_155",
+            "background_color": ""
+        },
+        {
+            "id": "div_156",
+            "background_color": ""
+        },
+        {
+            "id": "div_157",
+            "background_color": ""
+        },
+        {
+            "id": "div_158",
+            "background_color": ""
+        },
+        {
+            "id": "div_159",
+            "background_color": ""
+        },
+        {
+            "id": "div_160",
+            "background_color": ""
+        },
+        {
+            "id": "div_161",
+            "background_color": ""
+        },
+        {
+            "id": "div_162",
+            "background_color": ""
+        },
+        {
+            "id": "div_163",
+            "background_color": ""
+        },
+        {
+            "id": "div_164",
+            "background_color": ""
+        },
+        {
+            "id": "div_165",
+            "background_color": ""
+        },
+        {
+            "id": "div_166",
+            "background_color": ""
+        },
+        {
+            "id": "div_167",
+            "background_color": ""
+        },
+        {
+            "id": "div_168",
+            "background_color": ""
+        },
+        {
+            "id": "div_169",
+            "background_color": ""
+        },
+        {
+            "id": "div_170",
+            "background_color": ""
+        },
+        {
+            "id": "div_171",
+            "background_color": ""
+        },
+        {
+            "id": "div_172",
+            "background_color": ""
+        },
+        {
+            "id": "div_173",
+            "background_color": ""
+        }
+    ]
+}

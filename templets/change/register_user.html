@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Registration</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        .container {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center mb-4">Login / Registration</h2>
+                <div id="loginForm">
+                    <h3 class="text-center mb-4">Login</h3>
+                    <form method="post" action="{% url 'shop:login' %}">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <label for="loginEmail">Email address</label>
+                            <input type="text" class="form-control" name="username" id="loginEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" name="password" class="form-control" id="loginPassword" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                    <p class="text-center mt-3">Don't have an account? <a href="#" onclick="toggleForm()">Register here</a></p>
+                </div>
+                <div id="registerForm" style="display: none;">
+                    <h3 class="text-center mb-4">Register</h3>
+                    <form action="{% url 'shop:register' %}" method="post">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <label for="registerFullName">Full Name</label>
+                            <input type="text" name="name" class="form-control" id="registerFullName" placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="registerFullName">Phone number</label>
+                            <input type="text" name="phone" class="form-control" id="registerFullPhone" placeholder="Enter Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email address</label>
+                            <input type="email" name="email" class="form-control" id="registerEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" name="password" class="form-control" id="registerPassword" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </form>
+                    <p class="text-center mt-3">Already have an account? <a href="#" onclick="toggleForm()">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function toggleForm() {
+            var loginForm = document.getElementById("loginForm");
+            var registerForm = document.getElementById("registerForm");
+
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                registerForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            }
+        }
+    </script>
+
+    
+</body>
+</html>

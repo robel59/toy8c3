@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US">
+<head>
+{% load static %}
+{% load custom_tags %}
+<script>var jsonDataww = {{ json_data|safe }};</script>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="IE=edge" http-equiv="x-ua-compatible"/>
+<meta content="SemiColonWeb" name="author"/>
+<meta content="Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today." name="description"/>
+<!-- Font Imports -->
+<link href="{% static 'https://fonts.googleapis.com' %}" rel="preconnect"/>
+<link crossorigin="" href="{% static 'https://fonts.gstatic.com' %}" rel="preconnect"/>
+<link href="{% static 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital@0;1&amp;display=swap' %}" rel="stylesheet"/>
+<!-- Core Style -->
+<link href="{% static 'style.css' %}" rel="stylesheet"/>
+<!-- Font Icons -->
+<link href="{% static 'css/font-icons.css' %}" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="{% static 'css/custom.css' %}" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- Document Title
+	============================================= -->
+<title id="title_1"></title>
+</head>
+<body class="stretched">
+<!-- Document Wrapper
+	============================================= -->
+<div id="wrapper">
+<!-- Header
+		============================================= -->
+<header class="full-header" id="header">
+<div id="header-wrap">
+<div class="container">
+<div class="header-row">
+<!-- Logo
+						============================================= -->
+<div id="logo">
+<a href="index.html">
+<img alt="Canvas Logo" class="logo-default" src="{% get_image_url 1 %}" srcset="{% get_image_url 1 %}, {% get_image_url 1 %} 2x"/>
+<img alt="Canvas Logo" class="logo-dark" src="{% get_image_url 2 %}" srcset="{% get_image_url 2 %}, {% get_image_url 2 %}"/>
+</a>
+</div><!-- #logo end -->
+<div class="header-misc">
+<!-- Top Cart
+							============================================= -->
+<div class="header-misc-icon d-none d-sm-block" id="top-cart">
+	{% if user.is_authenticated %}
+	
+	<a href="{% url 'shop:logout' %}" ><i class="uil uil-signout"></i></a>
+		<a href="#" id="top-cart-trigger"><i class="uil uil-shopping-bag"></i><span class="top-cart-number">5</span></a>
+		
+		<div class="top-cart-content">
+			
+		<div class="top-cart-title">
+		<h4 id="h4_1"></h4>
+		</div>
+		{% if order_list_for_user %}
+		<div class="top-cart-items">
+			
+  
+
+			{% for ord in order_list_for_user %}
+				<div class="top-cart-item">
+					<div class="top-cart-item-image">
+						<a href="#"><img alt="Blue Round-Neck Tshirt" src="{{ord.item.images.all.0.image.url}}"/></a>
+					</div>
+					<div class="top-cart-item-desc">
+						<div class="top-cart-item-desc-title">
+							<a href="#">{{ord.item.name}}</a>
+							{% if ord.item.disc > 0 %}
+					{% with discounted_price=ord.item.price|calculate_discounted_price:ord.item.disc|floatformat:2 %}
+								<div class="top-cart-item-price d-block"><del>${{ ord.item.price }} birr</del> <ins>${{ discounted_price }} birr</ins></div>
+					{% endwith %}
+				{% else %}
+				<span class="top-cart-item-price d-block">{{ord.item.price}}</span>
+				{% endif %}
+						</div>
+						<div class="top-cart-item-quantity">x {{ord.quntity}}</div>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+		<div class="top-cart-action">
+		<span class="top-checkout-price">{{total}}</span>
+		<a class="button button-3d button-small m-0" href="{% url 'shop:cart_list' %}">View Cart</a>
+		</div>
+		{% else %}
+		<div class="top-cart-items">
+			<p>No Item selected.</p>
+			</div>
+			{% endif %}
+		</div>
+		
+	{% else %}
+		
+	<a href="{% url 'shop:login' %}"><i class="uil uil-signin"></i></a>
+
+	{% endif %}
+</div><!-- #top-cart end -->
+</div>
+<div class="primary-menu-trigger">
+<button class="cnvs-hamburger" title="Open Mobile Menu" type="button">
+<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+</button>
+</div>
+<!-- Primary Navigation
+						============================================= -->
+<nav class="primary-menu">
+<ul class="menu-container">
+<li class="menu-item">
+<a class="menu-link" href="index.html"><div>Home</div></a>
+</li>
+<li class="menu-item">
+<a class="menu-link" href="#"><div>Features</div></a>
+</li>
+<li class="menu-item mega-menu">
+<a class="menu-link" href="#"><div>Pages</div></a>
+</li>
+<li class="menu-item mega-menu">
+<a class="menu-link" href="#"><div>Portfolio</div></a>
+</li>
+<li class="menu-item mega-menu">
+<a class="menu-link" href="#"><div>Blog</div></a>
+</li>
+<li class="menu-item">
+<a class="menu-link" href="shop.html"><div>Shop</div></a>
+</li>
+<li class="menu-item mega-menu">
+<a class="menu-link" href="#"><div>Shortcodes</div></a>
+</li>
+</ul>
+</nav><!-- #primary-menu end -->
+</div>
+</div>
+
+{% if messages %}
+<div class="container">
+{% for message in messages %}
+	{% if message.tags %}
+	{% if 'alert-success' in message.tags %}
+		<div class="alert alert-success">
+		<i class="bi-boxes"></i>{{ message }}
+		</div>
+	{% elif 'alert-info' in message.tags %}
+		<div class="alert alert-info">
+		<i class="bi-hand-index"></i>{{ message }}
+		</div>
+	{% elif 'alert-warning' in message.tags %}
+		<div class="alert alert-warning">
+		<i class="bi-exclamation-diamond-fill"></i>{{ message }}
+		</div>
+	{% elif 'alert-danger' in message.tags %}
+		<div class="alert alert-danger">
+		<i class="bi-x-circle-fill"></i>{{ message }}
+		</div>
+	{% endif %}
+	{% endif %}
+{% endfor %}
+</div>
+{% endif %}
+</div>
+<div class="header-wrap-clone"></div>
+</header>
+<!-- #header end -->
+<!-- Page Title
+		============================================= -->
+<section class="page-title bg-transparent">
+<div class="container">
+<div class="page-title-row">
+<div class="page-title-content">
+<h1 id="h1_1"></h1>
+<span>Products with Filter Functionality</span>
+</div>
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="#">Home</a></li>
+<li aria-current="page" class="breadcrumb-item active">Products</li>
+</ol>
+</nav>
+</div>
+</div>
+</section><!-- .page-title end -->
+<!-- Content
+		============================================= -->
+<section id="content">
+<div class="content-wrap">
+<div class="container">
+<div class="row gx-5 col-mb-80">
+<!-- Post Content
+						============================================= -->
+<main class="postcontent col-lg-9 order-lg-last">
+	
+<!-- Shop
+							============================================= -->
+<div class="shop row grid-container gutter-20" data-layout="fitRows" id="shop">
+	{% for item in item %}
+	<div class="product col-md-4 col-sm-6 {{item.type.name}}">
+		<div class="grid-inner">
+			<div class="product-image">
+				{% with first_image=item.images.all.0 %}
+
+				<a href="{% url 'shop:item_detail' item_id=item.id %}"><img src="{{first_image.image.url}}" alt="Checked Short Dress"></a>
+				{% endwith %}
+				{% with secondimage=item.images.all.1 %}
+
+				<a href="{% url 'shop:item_detail' item_id=item.id %}"><img src="{{secondimage.image.url}}" alt="Checked Short Dress"></a>
+				{% endwith %}
+
+				{% if item.active == False %}
+				<div class="sale-flash badge bg-secondary p-2">Out of Stock</div>
+				{% endif %}
+				<div class="bg-overlay">
+					<div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400">
+						<a href="#" class="btn btn-dark me-2" title="Add to Cart"><i class="bi-bag-plus"></i></a>
+						<!--
+						<a href="include/ajax/shop-item.html" class="btn btn-dark" data-lightbox="ajax" title="Quick View"><i class="bi-eye"></i></a>
+							-->
+					</div>
+					<div class="bg-overlay-bg bg-transparent"></div>
+				</div>
+			</div>
+			<div class="product-desc">
+				<div class="product-title"><h3><a href="{% url 'shop:item_detail' item_id=item.id %}">{{item.name}}</a></h3></div>
+				{% if item.disc > 0 %}
+					{% with discounted_price=item.price|calculate_discounted_price:item.disc|floatformat:2 %}
+								<div class="product-price"><del>${{ item.price }} birr</del> <ins>${{ discounted_price }} birr</ins></div>
+					{% endwith %}
+				{% else %}
+					<div class="product-price"><ins>{{ item.price }} birr</ins></div>
+				{% endif %}
+
+
+
+				<div class="product-rating">
+					{% with stars=item.average_rating|calculate_stars %}
+						{% for _ in "x"|ljust:stars.full_stars %}
+							<i class="bi-star-fill"></i>
+						{% endfor %}
+						{% if stars.half_star %}
+							<i class="bi-star-half"></i>
+						{% endif %}
+						{% for _ in "x"|ljust:stars.remaining_stars %}
+							<i class="bi-star"></i>
+						{% endfor %}
+					{% endwith %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}
+</div><!-- #shop end -->
+</main><!-- .postcontent end -->
+<!-- Sidebar
+						============================================= -->
+<aside class="sidebar col-lg-3">
+<div class="sidebar-widgets-wrap">
+<div class="widget widget-filter-links">
+<h4 id="h4_2"></h4>
+<ul class="custom-filter ps-2" data-active-class="active-filter" data-container="#shop">
+<li class="widget-filter-reset active-filter"><a data-filter="*" href="#">Clear</a></li>
+{% for i in type %}
+<li><a data-filter=".{{i.name}}" href="#">{{i.name}}</a></li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</aside><!-- .sidebar end -->
+</div>
+</div>
+</div>
+</section><!-- #content end -->
+<!-- Footer
+		============================================= -->
+<footer class="dark" id="footer">
+<!-- Copyrights
+			============================================= -->
+<div id="copyrights">
+<div class="container">
+<div class="row align-items-center justify-content-between col-mb-30">
+<div class="col-12 col-lg-auto text-center text-lg-start">
+<img alt="Image" class="mb-4" src="{% get_image_url 7 %}"/><br/>
+							Copyrights © 2023 All Rights Reserved by Canvas Inc.
+						</div>
+<div class="col-12 col-lg-auto text-center text-lg-end">
+<div class="d-flex justify-content-center justify-content-lg-end mt-4">
+<a class="social-icon si-small text-white bg-facebook" href="#">
+<i class="fa-brands fa-facebook-f"></i>
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+<a class="social-icon si-small text-white bg-twitter" href="#">
+<i class="fa-brands fa-twitter"></i>
+<i class="fa-brands fa-twitter"></i>
+</a>
+<a class="social-icon si-small text-white bg-google" href="#">
+<i class="fa-brands fa-google"></i>
+<i class="fa-brands fa-google"></i>
+</a>
+<a class="social-icon si-small text-white bg-pinterest" href="#">
+<i class="fa-brands fa-pinterest-p"></i>
+<i class="fa-brands fa-pinterest-p"></i>
+</a>
+<a class="social-icon si-small text-white bg-vimeo" href="#">
+<i class="fa-brands fa-vimeo-v"></i>
+<i class="fa-brands fa-vimeo-v"></i>
+</a>
+<a class="social-icon si-small text-white bg-github" href="#">
+<i class="fa-brands fa-github"></i>
+<i class="fa-brands fa-github"></i>
+</a>
+<a class="social-icon si-small text-white bg-yahoo" href="#">
+<i class="fa-brands fa-yahoo"></i>
+<i class="fa-brands fa-yahoo"></i>
+</a>
+<a class="social-icon si-small text-white bg-linkedin" href="#">
+<i class="fa-brands fa-linkedin"></i>
+<i class="fa-brands fa-linkedin"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div><!-- #copyrights end -->
+</footer><!-- #footer end -->
+</div><!-- #wrapper end -->
+<!-- Go To Top
+	============================================= -->
+<div class="uil uil-angle-up" id="gotoTop"></div>
+<!-- JavaScripts
+	============================================= -->
+<script src="{% static 'js/plugins.min.js' %}"></script>
+<script src="{% static 'js/functions.bundle.js' %}"></script>
+<script>
+		jQuery(window).on( 'load', function(){
+			jQuery('#shop').isotope({
+				transitionDuration: '0.65s',
+				getSortData: {
+					name: '.product-title',
+					price_lh: function( itemElem ) {
+						if( jQuery(itemElem).find('.product-price').find('ins').length > 0 ) {
+							var price = jQuery(itemElem).find('.product-price ins').text();
+						} else {
+							var price = jQuery(itemElem).find('.product-price').text();
+						}
+
+						priceNum = price.split("$");
+
+						return parseFloat( priceNum[1] );
+					},
+					price_hl: function( itemElem ) {
+						if( jQuery(itemElem).find('.product-price').find('ins').length > 0 ) {
+							var price = jQuery(itemElem).find('.product-price ins').text();
+						} else {
+							var price = jQuery(itemElem).find('.product-price').text();
+						}
+
+						priceNum = price.split("$");
+
+						return parseFloat( priceNum[1] );
+					}
+				},
+				sortAscending: {
+					name: true,
+					price_lh: true,
+					price_hl: false
+				}
+			});
+
+			jQuery('.custom-filter:not(.no-count)').children('li:not(.widget-filter-reset)').each( function(){
+				var element = jQuery(this),
+					elementFilter = element.children('a').attr('data-filter'),
+					elementFilterContainer = element.parents('.custom-filter').attr('data-container');
+
+				elementFilterCount = Number( jQuery(elementFilterContainer).find( elementFilter ).length );
+
+				element.append('<span>'+ elementFilterCount +'</span>');
+			});
+
+			jQuery('.shop-sorting li').click( function() {
+				jQuery('.shop-sorting').find('li').removeClass( 'active-filter' );
+				jQuery(this).addClass( 'active-filter' );
+				var sortByValue = jQuery(this).find('a').attr('data-sort-by');
+				jQuery('#shop').isotope({ sortBy: sortByValue });
+				return false;
+			});
+		});
+	</script>
+<script src="{% static 'webfunction.js' %}"></script><script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Iterate over each key in the JSON data
+        for (var key in jsonDataww) {
+            if (jsonDataww.hasOwnProperty(key)) {
+                var element = document.getElementById(key);
+                if (element) {
+                    if(key.startsWith("a")){
+                        element.href = jsonDataww[key['link']];
+                    }else{
+                        element.textContent = jsonDataww[key];
+                    }
+                }
+            }
+        }
+    });
+    </script></body>
+</html>

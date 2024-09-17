@@ -1,0 +1,732 @@
+{% load static %}
+{% include 'web/chat.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Chain App Dev - App Landing Page HTML5 Template</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<!--
+
+TemplateMo 570 Chain App Dev
+
+https://templatemo.com/tm-570-chain-app-dev
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-chain-app-dev.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animated.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="{% static 'assets/{% get_image_url 1 %}' %}" alt="Chain App Dev">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#services">Services</a></li>
+              <li class="scroll-to-section"><a href="#about">About</a></li>
+              <li class="scroll-to-section"><a href="#pricing">Pricing</a></li>
+              <li class="scroll-to-section"><a href="#newsletter">Newsletter</a></li>
+              <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  
+  <div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+        <span class="header_title">Login</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+
+    <section class="popupBody">
+        <!-- Social Login -->
+        <div class="social_login">
+            <div class="">
+                <a href="#" class="social_box fb">
+                    <span class="icon"><i class="fab fa-facebook"></i></span>
+                    <span class="icon_title">Connect with Facebook</span>
+
+                </a>
+
+                <a href="#" class="social_box google">
+                    <span class="icon"><i class="fab fa-google-plus"></i></span>
+                    <span class="icon_title">Connect with Google</span>
+                </a>
+            </div>
+
+            <div class="centeredText">
+                <span>Or use your Email address</span>
+            </div>
+
+            <div class="action_btns">
+                <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+                <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+            </div>
+        </div>
+
+        <!-- Username & Password Login form -->
+        <div class="user_login">
+            <form>
+                <label>Email / Username</label>
+                <input type="text" />
+                <br />
+
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="remember" type="checkbox" />
+                    <label for="remember">Remember me on this computer</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+                </div>
+            </form>
+
+            <a href="#" class="forgot_password">Forgot password?</a>
+        </div>
+
+        <!-- Register Form -->
+        <div class="user_register">
+            <form>
+                <label>Full Name</label>
+                <input type="text" />
+                <br />
+
+                <label>Email Address</label>
+                <input type="email" />
+                <br />
+
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="send_updates" type="checkbox" />
+                    <label for="send_updates">Send me occasional email updates</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6 align-self-center">
+            <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- Add ID to the header text -->
+                  <h2 id="headerText"></h2>
+                  <!-- Add ID to the paragraph -->
+                  <p id="paragraphText"></p>
+                </div>
+                <div class="col-lg-12">
+                  <div class="white-button first-button scroll-to-section">
+                    <a href="#contact" id="buttonOne"></a>
+                  </div>
+                  <div class="white-button scroll-to-section">
+                    <a href="#contact" id="buttonTwo"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+              <!-- Add ID directly to the image -->
+              <img src="" alt="" id="mainImage">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <!-- Add unique ID to the heading -->
+            <h4 id="sectionHeading"></h4>
+            <img src="{% static 'assets/images/heading-line-dec.png' %}" alt="">
+            <!-- Add unique ID to the paragraph -->
+            <p id="sectionParagraph"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="service-item first-service">
+            <div class="icon"></div>
+            <!-- Add unique ID to the first service title -->
+            <h4 id="firstServiceTitle"></h4>
+            <!-- Add unique ID to the first service description -->
+            <p id="firstServiceDescription"></p>
+            <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item second-service">
+            <div class="icon"></div>
+            <!-- Add unique ID to the second service title -->
+            <h4 id="secondServiceTitle"></h4>
+            <!-- Add unique ID to the second service description -->
+            <p id="secondServiceDescription"></p>
+            <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item third-service">
+            <div class="icon"></div>
+            <!-- Add unique ID to the third service title -->
+            <h4 id="thirdServiceTitle"></h4>
+            <!-- Add unique ID to the third service description -->
+            <p id="thirdServiceDescription"></p>
+            <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item fourth-service">
+            <div class="icon"></div>
+            <!-- Add unique ID to the fourth service title -->
+            <h4 id="fourthServiceTitle"></h4>
+            <!-- Add unique ID to the fourth service description -->
+            <p id="fourthServiceDescription"></p>
+            <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="section-heading">
+            <!-- Add unique ID to the heading -->
+            <h4 id="sectionHeading"></h4>
+            <img src="{% static 'assets/images/heading-line-dec.png' %}" alt="">
+            <!-- Add unique ID to the paragraph -->
+            <p id="sectionParagraph"></p>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="box-item">
+                <!-- Add unique ID to the first box item title -->
+                <h4 id="firstBoxItemTitle"></h4>
+                <!-- Add unique ID to the first box item description -->
+                <p id="firstBoxItemDescription"></p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <!-- Add unique ID to the second box item title -->
+                <h4 id="secondBoxItemTitle"></h4>
+                <!-- Add unique ID to the second box item description -->
+                <p id="secondBoxItemDescription"></p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <!-- Add unique ID to the third box item title -->
+                <h4 id="thirdBoxItemTitle"></h4>
+                <!-- Add unique ID to the third box item description -->
+                <p id="thirdBoxItemDescription"></p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <!-- Add unique ID to the fourth box item title -->
+                <h4 id="fourthBoxItemTitle"></h4>
+                <!-- Add unique ID to the fourth box item description -->
+                <p id="fourthBoxItemDescription"></p>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <!-- Add unique ID to the main paragraph -->
+              <p id="mainParagraph"></p>
+              <div class="gradient-button">
+                <a href="#">Start 14-Day Free Trial</a>
+              </div>
+              <span>*No Credit Card Required</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image">
+            <!-- Add unique ID to the right image -->
+            <img src="" alt="" id="rightImage">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <div id="clients" class="the-clients">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <!-- Add unique ID to the heading -->
+            <h4 id="sectionHeading"></h4>
+            <img src="{% static 'assets/images/heading-line-dec.png' %}" alt="">
+            <!-- Add unique ID to the paragraph -->
+            <p id="sectionParagraph"></p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-7 align-self-center">
+                  <div class="menu">
+                    <!-- Add unique ID to the first client -->
+                    <div class="first-thumb active" id="firstClient">
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <!-- Add unique ID to the first client's name -->
+                            <h4 id="firstClientName"></h4>
+                            <span class="date">30 November 2021</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <!-- Add unique ID to the first client's category -->
+                            <span id="firstClientCategory"></span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <!-- Add unique ID to the first client's rating -->
+                            <span id="firstClientRating"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Add unique ID to the second client -->
+                    <div id="secondClient">
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <!-- Add unique ID to the second client's name -->
+                            <h4 id="secondClientName"></h4>
+                            <span class="date">29 November 2021</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <!-- Add unique ID to the second client's category -->
+                            <span id="secondClientCategory"></span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <!-- Add unique ID to the second client's rating -->
+                            <span id="secondClientRating"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Continue adding unique IDs for the remaining clients -->
+                    <!-- ... -->
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <ul class="nacc">
+                    <!-- Add unique ID to the first client's testimonial -->
+                    <li class="active" id="firstClientTestimonial">
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="{% static 'assets/images/quote.png' %}" alt="">
+                                <!-- Add unique ID to the first client's testimonial content -->
+                                <p id="firstClientTestimonialContent"></p>
+                              </div>
+                              <div class="down-content">
+                                <img src="{% static 'assets/images/client-image.jpg' %}" alt="">
+                                <div class="right-content">
+                                  <!-- Add unique ID to the first client's name in the testimonial -->
+                                  <h4 id="firstClientTestimonialName"></h4>
+                                  <!-- Add unique ID to the first client's role in the testimonial -->
+                                  <span id="firstClientTestimonialRole"></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- Add unique IDs for the remaining clients' testimonials -->
+                    <!-- ... -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>We Have The Best Pre-Order <em>Prices</em> You Can Get</h4>
+            <img src="{% static 'assets/images/heading-line-dec.png' %}" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
+          </div>
+        </div>
+        {% for service in services %}
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">{{service.price}}</span>
+            <h4>{{service.title}}</h4>
+            <div class="icon">
+              <img src="{{ service.image.url }}" alt="{{ service.title }}">
+            </div>
+            <p>{{ service.description }}</p>
+            <div class="border-button">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">
+
+              Purchase This Plan Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="orderModalLabel">Order Form</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <form id="orderForm">
+                          {% csrf_token %}
+                          <input type="hidden" name="service_id" value="{{ service.id }}">
+                          <div class="mb-3">
+                              <label for="name" class="form-label">Name:</label>
+                              <input type="text" name="name" class="form-control" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="phone_number" class="form-label">Phone Number:</label>
+                              <input type="text" name="phone_number" class="form-control" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="email" class="form-label">Email:</label>
+                              <input type="email" name="email" class="form-control" required>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Place Order</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+        {% endfor %}
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">$12</span>
+            <h4>Standard Plan App</h4>
+            <div class="icon">
+              <img src="{% static 'assets/images/pricing-table-01.png' %}" alt="">
+            </div>
+            <ul>
+              <li>Lorem Ipsum Dolores</li>
+              <li>20 TB of Storage</li>
+              <li class="non-function">Life-time Support</li>
+              <li class="non-function">Premium Add-Ons</li>
+              <li class="non-function">Fastest Network</li>
+              <li class="non-function">More Options</li>
+            </ul>
+            <div class="border-button">
+              <a href="#">Purchase This Plan Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-pro">
+            <span class="price">$25</span>
+            <h4>Business Plan App</h4>
+            <div class="icon">
+              <img src="{% static 'assets/images/pricing-table-01.png' %}" alt="">
+            </div>
+            <ul>
+              <li>Lorem Ipsum Dolores</li>
+              <li>50 TB of Storage</li>
+              <li>Life-time Support</li>
+              <li>Premium Add-Ons</li>
+              <li class="non-function">Fastest Network</li>
+              <li class="non-function">More Options</li>
+            </ul>
+            <div class="border-button">
+              <a href="#">Purchase This Plan Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">$66</span>
+            <h4>Premium Plan App</h4>
+            <div class="icon">
+              <img src="{% static 'assets/images/pricing-table-01.png' %}" alt="">
+            </div>
+            <ul>
+              <li>Lorem Ipsum Dolores</li>
+              <li>120 TB of Storage</li>
+              <li>Life-time Support</li>
+              <li>Premium Add-Ons</li>
+              <li>Fastest Network</li>
+              <li>More Options</li>
+            </ul>
+            <div class="border-button">
+              <a href="#">Purchase This Plan Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <footer id="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form method="post" id="search" >
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <!-- Add unique ID to the first footer widget -->
+            <h4 id="contactHeading">Contact Us</h4>
+            <!-- Add unique ID to the first footer widget's content -->
+            <p id="contactAddress">Rio de Janeiro - RJ, 22795-008, Brazil</p>
+            <p><a href="#" id="contactPhone">010-020-0340</a></p>
+            <p><a href="#" id="contactEmail">info@company.co</a></p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <!-- Add unique ID to the second footer widget -->
+            <h4 id="aboutHeading">About Us</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <!-- Add unique ID to the third footer widget -->
+            <h4 id="linksHeading">Useful Links</h4>
+            <ul>
+              <li><a href="#">Free Apps</a></li>
+              <li><a href="#">App Engine</a></li>
+              <li><a href="#">Programming</a></li>
+              <li><a href="#">Development</a></li>
+              <li><a href="#">App News</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">App Dev Team</a></li>
+              <li><a href="#">Digital Web</a></li>
+              <li><a href="#">Normal Apps</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <!-- Add unique ID to the fourth footer widget -->
+            <h4 id="companyHeading">About Our Company</h4>
+            <div class="logo">
+              <img src="{% static 'assets/images/white-logo.png' %}" alt="">
+            </div>
+            <!-- Add unique ID to the fourth footer widget's content -->
+            <p id="companyDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright © 2022 Chain App Dev Company. All Rights Reserved. 
+              <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </footer>
+
+
+  <script>
+    // JavaScript function to handle form submission via AJAX
+    $(document).ready(function () {
+        $('#orderForm').submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/order_service_js/',
+                data: $('#orderForm').serialize(),
+                dataType: 'json',
+                success: function (data) {
+                    // Close the modal after successful submission
+                    $('#orderModal').modal('hide');
+                    alert(data.message);
+                },
+                error: function () {
+                    alert('An error occurred. Please try again later.');
+                }
+            });
+        });
+    });
+</script>
+  <!-- Scripts -->
+  <script>
+    // JavaScript function to handle form submission via AJAX
+    $(document).ready(function () {
+        $('#search').submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/collect_email/',  // URL to your Django view
+                data: $('#search').serialize(),
+                dataType: 'json',
+                success: function (data) {
+                    if (data.message === 'Success') {
+                        alert('Thank you for subscribing!');
+                    } else {
+                        alert('Error: ' + data.errors.email);
+                    }
+                },
+                error: function () {
+                    alert('An error occurred. Please try again later.');
+                }
+            });
+        });
+    });
+</script>
+  <script src="{% static 'chat/chat.js' %}"></script>
+
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'assets/js/animation.js' %}"></script>
+  <script src="{% static 'assets/js/imagesloaded.js' %}"></script>
+  <script src="{% static 'assets/js/popup.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

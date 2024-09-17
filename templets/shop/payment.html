@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+	<head><script>{% load static %}</script><script>{% load custom_tags %}</script><script>var jsonDataww = {{ json_data|safe }};</script>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+		<meta content="IE=edge" http-equiv="x-ua-compatible"/>
+		<meta content="SemiColonWeb" name="author"/>
+		<meta content="Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today." name="description"/>
+		<!-- Font Imports -->
+		<link href="'https://fonts.googleapis.com'" rel="preconnect"/>
+		<link crossorigin="" href='https://fonts.gstatic.com' rel="preconnect"/>
+		<link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital@0;1&amp;display=swap' rel="stylesheet"/>
+		<!-- Core Style -->
+		<link href="{% static 'style.css' %}" rel="stylesheet"/>
+		<!-- Font Icons -->
+		<link href="{% static 'css/font-icons.css' %}" rel="stylesheet"/>
+		<!-- Custom CSS -->
+		<link href="{% static 'css/custom.css' %}" rel="stylesheet"/>
+		<meta content="width=device-width, initial-scale=1" name="viewport"/>
+		<!-- Document Title
+			============================================= -->
+		<title id="title_1"></title>
+		</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper">
+
+		<!-- Header
+		============================================= -->
+        <header class="full-header" id="header">
+			<div id="header-wrap">
+			<div class="container">
+			<div class="header-row">
+			<!-- Logo
+									============================================= -->
+			<div id="logo">
+				<a href="{% url 'web:index' %}">
+					<img alt="Canvas Logo" class="logo-default" src="{% get_image_url 1 %}" srcset="{% get_image_url 1 %}, {% get_image_url 1 %} 2x"/>
+					<img alt="Canvas Logo" class="logo-dark" src="{% get_image_url 2 %}" srcset="{% get_image_url 2 %}, {% get_image_url 2 %}"/>
+				</a>
+			</div><!-- #logo end -->
+			<div class="header-misc">
+			<!-- Top Cart
+										============================================= -->
+			
+			<div class="header-misc-icon d-none d-sm-block" id="top-cart">
+				{% if user.is_authenticated %}
+				
+					<a href="#" id="top-cart-trigger"><i class="uil uil-shopping-bag"></i><span class="top-cart-number">5</span></a>
+					
+					<div class="top-cart-content">
+						
+					<div class="top-cart-title">
+					<h4 id="h4_1"></h4>
+					</div>
+					{% if order_list_for_user %}
+					<div class="top-cart-items">
+			
+						{% for ord in order_list_for_user %}
+							<div class="top-cart-item">
+								<div class="top-cart-item-image">
+									<a href="#"><img alt="Blue Round-Neck Tshirt" src="{{ord.item.images.all.0.image.url}}"/></a>
+								</div>
+								<div class="top-cart-item-desc">
+									<div class="top-cart-item-desc-title">
+										<a href="#">{{ord.item.name}}</a>
+										{% if ord.item.disc > 0 %}
+								{% with discounted_price=ord.item.price|calculate_discounted_price:ord.item.disc|floatformat:2 %}
+											<div class="top-cart-item-price d-block"><del>${{ ord.item.price }} birr</del> <ins>${{ discounted_price }} birr</ins></div>
+								{% endwith %}
+							{% else %}
+							<span class="top-cart-item-price d-block">{{ord.item.price}}</span>
+							{% endif %}
+									</div>
+									<div class="top-cart-item-quantity">x {{ord.quntity}}</div>
+								</div>
+							</div>
+						{% endfor %}
+			
+					</div>
+					<div class="top-cart-action">
+					<span class="top-checkout-price">{{total}}</span>
+					<a class="button button-3d button-small m-0" href="{% url 'shop:cart_list' %}">View Cart</a>
+					</div>
+					{% else %}
+					<div class="top-cart-items">
+						<p>No Item selected.</p>
+						</div>
+						{% endif %}
+					</div>
+					
+			
+				{% endif %}
+			</div>
+			
+			<!-- #top-cart end -->
+			</div>
+			<div class="primary-menu-trigger">
+			<button class="cnvs-hamburger" title="Open Mobile Menu" type="button">
+			<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+			</button>
+			</div>
+			<!-- Primary Navigation
+									============================================= -->
+			<nav class="primary-menu">
+			<ul class="menu-container">
+			<li class="menu-item">
+			<a class="menu-link" href="{}"><div>Home</div></a>
+			</li>
+			<li class="menu-item">
+			<a class="menu-link" href="{% url 'shop:cart_list' %}"><div>Cart</div></a>
+			</li>
+			<li class="menu-item mega-menu">
+			<a class="menu-link" href="{% url 'shop:purchesed_list' %}"><div>Checkout</div></a>
+			</li>
+			<li class="menu-item mega-menu">
+			<a class="menu-link" href="#"><div>contact</div></a>
+			</li>
+			<li class="menu-item mega-menu">
+				{% if user.is_authenticated %}
+			<a class="menu-link" href="{% url 'shop:logout' %}"><div>Logout</div></a>
+				{% else %}
+				<a class="menu-link" href="{% url 'shop:login' %}"><div>Login</div></a>
+			
+			
+				{% endif %}
+			</li>
+			</ul>
+			</nav><!-- #primary-menu end -->
+			</div>
+			</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+			</header>
+	<!-- #header end -->
+
+	
+		<!-- Page Title
+		============================================= -->
+		<section class="page-title bg-transparent">
+			<div class="container">
+				<div class="page-title-row">
+
+					<div class="page-title-content">
+						<h1>Ordered List</h1>
+					</div>
+
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Ordered List</li>
+						</ol>
+					</nav>
+
+				</div>
+			</div>
+		</section><!-- .page-title end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container">
+
+					<div class="row">
+						<div class="col-xl-12">
+							<table class="table cart mb-12">
+								<thead>
+									<tr>
+										<th class="cart-product-thumbnail">Order Number</th>
+										<th class="cart-product-quantity">State</th>
+										<th class="cart-product-subtotal">Total Item cost</th>
+										<th class="cart-product-subtotal">Total Discount</th>
+										<th class="cart-product-subtotal">Total to be paid</th>
+										<th class="cart-product-subtotal">Paid amount</th>
+										<th class="cart-product-subtotal">View</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for i in listorder %}
+                                    
+									<tr class="cart_item">
+
+											<td class="cart-product-thumbnail">
+                                                <span class="amount">{{i.payed.id}} </span>
+
+											</td>
+                                            <td class="cart-product-quantity">
+                                                {{i.order.status}}
+                                            </td>
+
+
+											<td class="cart-product-quantity">
+                                                <span class="amount">{{i.total}} birr</span>
+											</td>
+
+		
+                                            <td class="cart-product-quantity">
+                                                <span class="amount">{{i.discunt}} birr</span>
+                                            </td>
+                                            <td class="cart-product-quantity">
+                                                <span class="amount">{{i.subtot}} birr</span>
+                                            </td>
+                                            <td class="cart-product-quantity">
+                                                <span class="amount">{{i.totalpaid}} birr</span>
+                                            </td>
+                                            <td class="cart-product-quantity">
+                                                <div class="d-flex justify-content-end">
+                                                    <a href="{% url 'shop:payment_display' i.id %}" class="button button-3d">View Order</a>
+                                                </div>
+                                            </td>
+										</tr>
+									{% endfor %}
+									
+								</tbody>
+
+							</table>
+						</div>
+
+						
+					</div>
+
+				</div>
+			</div>
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+<footer class="dark" id="footer">
+	<!-- Copyrights
+				============================================= -->
+	<div id="copyrights">
+	<div class="container">
+	<div class="row align-items-center justify-content-between col-mb-30">
+	<div class="col-12 col-lg-auto text-center text-lg-start">
+	<img alt="Image" class="mb-4" src="{% get_image_url 7 %}"/><br/>
+								Copyrights © 2023 All Rights Reserved by Canvas Inc.
+							</div>
+	<div class="col-12 col-lg-auto text-center text-lg-end">
+	<div class="d-flex justify-content-center justify-content-lg-end mt-4">
+	<a class="social-icon si-small text-white bg-facebook" href="#">
+	<i class="fa-brands fa-facebook-f"></i>
+	<i class="fa-brands fa-facebook-f"></i>
+	</a>
+	<a class="social-icon si-small text-white bg-twitter" href="#">
+	<i class="fa-brands fa-twitter"></i>
+	<i class="fa-brands fa-twitter"></i>
+	</a>
+	<a class="social-icon si-small text-white bg-google" href="#">
+	<i class="fa-brands fa-google"></i>
+	<i class="fa-brands fa-google"></i>
+	</a>
+	<a class="social-icon si-small text-white bg-pinterest" href="#">
+	<i class="fa-brands fa-pinterest-p"></i>
+	<i class="fa-brands fa-pinterest-p"></i>
+	</a>
+	<a class="social-icon si-small text-white bg-vimeo" href="#">
+	<i class="fa-brands fa-vimeo-v"></i>
+	<i class="fa-brands fa-vimeo-v"></i>
+	</a>
+	<a class="social-icon si-small text-white bg-github" href="#">
+	<i class="fa-brands fa-github"></i>
+	<i class="fa-brands fa-github"></i>
+	</a>
+	<a class="social-icon si-small text-white bg-yahoo" href="#">
+	<i class="fa-brands fa-yahoo"></i>
+	<i class="fa-brands fa-yahoo"></i>
+	</a>
+	<a class="social-icon si-small text-white bg-linkedin" href="#">
+	<i class="fa-brands fa-linkedin"></i>
+	<i class="fa-brands fa-linkedin"></i>
+	</a>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div><!-- #copyrights end -->
+	</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="uil uil-angle-up"></div>
+
+	<script src="{% static 'js/plugins.min.js' %}"></script>
+	<script src="{% static 'js/functions.bundle.js' %}"></script>
+	<script src="{% static 'webfunction.js' %}"></script><script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Iterate over each key in the JSON data
+			for (var key in jsonDataww) {
+				if (jsonDataww.hasOwnProperty(key)) {
+					var element = document.getElementById(key);
+					if (element) {
+						if(key.startsWith("a")){
+							element.href = jsonDataww[key['link']];
+						}else{
+							element.textContent = jsonDataww[key];
+						}
+					}
+				}
+			}
+		});
+		</script></body>
+	</html>

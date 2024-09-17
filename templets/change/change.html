@@ -1,0 +1,265 @@
+message
+<form action="{% url 'web:create_message' %}" method="post" >
+    {% csrf_token %}
+    <input type="text"  name="name" value="" placeholder="Full Name">
+    <input type="text" name="email" value="" placeholder="Email Address">
+
+    <textarea name="description" rows="4" cols="30" placeholder="Message"></textarea>
+  
+    <button type="submit" value="submit">Send Email</button>
+
+</form>
+
+testmonial 
+
+{% for i in testmon %}
+
+    <div class="single_client_review">
+        <div class="client_img">
+            <img src="{{i.image.url}}" alt="#">
+        </div>
+        <p>{{i.description}}</p>
+        <h5>- {{i.name}}</h5>
+    </div>
+{% endfor %}  
+
+service 
+
+{% for service in services %}
+
+    {{service.price}}
+    {{ service.title }}
+    <img alt="{{ service.title }}" src="{{ service.image.url }}"/>
+
+    <form action="{% url 'wab:order_service' %}" method="post" >
+        {% csrf_token %}
+        <input name="service_id" type="hidden" value="{{ service.id }}"/>
+        <input class="form-control" name="name" required="" type="text"/>
+        <input class="form-control" name="phone_number" required="" type="text"/>
+        <input  name="email" required="" type="email"/>
+        <button class="btn btn-primary" type="submit">Place Order</button>
+    </form>
+{% endfor %}
+
+social 
+
+{% for socilamedia in social %}
+    {% if socilamedia.social_media.name == "Facebook" %}
+    <a href="{{socilamedia.link}}"><i class="fab fa-facebook"></i></a>
+    {% elif socilamedia.social_media.name == "Instagram" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-instagram"></i></a>
+    {% elif socilamedia.social_media.name == "Twitter" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-twitter"></i></a>
+    {% elif socilamedia.social_media.name == "LinkedIn" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-linkedin"></i></a>
+    {% elif socilamedia.social_media.name == "Snapchat" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-snapchat"></i></a>
+    {% elif socilamedia.social_media.name == "Pinterest" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-pinterest"></i></a>
+    {% elif socilamedia.social_media.name == "Reddit" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-reddit"></i></a>
+    {% elif socilamedia.social_media.name == "TikTok" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-tiktok"></i></a>
+    {% elif socilamedia.social_media.name == "YouTube" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-youtube"></i></a>
+    {% elif socilamedia.social_media.name == "WhatsApp" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-whatsapp"></i></a>
+    {% elif socilamedia.social_media.name == "WeChat" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-weixin"></i></a>
+    {% elif socilamedia.social_media.name == "Tumblr" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-tumblr"></i></a>
+    {% elif socilamedia.social_media.name == "Twitch" %}
+    <a href="{{socilamedia.link}}"><i class="fab fa-twitch"></i></a>
+    {% elif socilamedia.social_media.name == "Telegram" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-telegram"></i></a>
+    {% elif socilamedia.social_media.name == "Discord" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-discord"></i></a>
+    {% elif socilamedia.social_media.name == "Clubhouse" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-houzz"></i></a>
+    {% elif socilamedia.social_media.name == "Viber" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-viber"></i></a>
+    {% elif socilamedia.social_media.name == "LINE" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-line"></i></a>
+    {% elif socilamedia.social_media.name == "QQ" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-qq"></i></a>
+    {% elif socilamedia.social_media.name == "Sina Weibo" %}
+    <a href="{{socilamedia.link}}"> <i class="fab fa-weibo"></i></a>
+    {% endif %}
+{% endfor %}
+
+worker 
+    {% for worker in worke %}
+        {{worker.name}}
+        {{worker.postion}}
+        {{worker.description}}
+        <img src="{{worker.image.url}}" alt="{{worker.name}}">
+
+        {% for social in worker.socilamedia_worker.all %}
+            {{social.social_media.name}}
+            <a href="{{social.link}}"></a>
+        {% endfor %}
+
+    {% endfor %}
+
+Subscribe 
+
+<form method="post" action="{% url 'web:collect_email' %}">
+    {% csrf_token %}
+    <input type="email" name="email" placeholder="Enter your mail">
+    <button type="submit" class="btn_1">Subscribe</a>
+</form>
+
+contact 
+
+map 
+
+sass 
+{% for memb in memb %}
+
+    <div class="col-lg-4">
+        <div class="card rounded-6 overflow-hidden border-0 shadow-sm">
+            <div class="card-body p-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#578316" viewBox="0 0 256 256"><path d="M63.81,192.19c-47.89-79.81,16-159.62,151.64-151.64C223.43,176.23,143.62,240.08,63.81,192.19Z" opacity="0.2"></path><path d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.5-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"></path></svg>
+
+                <h3 class="fs-6 fw-semibold text-uppercase mb-0 mt-4">{{memb.name}}</h3>
+                <h4 class="display-5 fw-bold my-3">{{memb.price}}</h4>
+
+                <p class="fw-light">{{memb.description}}</p>
+                <a href="#" class="button button-border button-rounded button-large h-bg-dark mx-0 fw-bold d-block">Get Started</a>
+
+                <h5 class="fs-6 fw-bold mt-4 mb-3 pt-1">What's Included:</h5>
+                <ul class="iconlist iconlist-sm fw-medium text-muted mb-0">
+                    {% for ser in memb.offers.all %}
+                    <li><i class="bi-check-circle-fill text-success"></i><span>{{ser.name}}</span>{{ser.description}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+faq 
+{% for faq in faq %}
+
+    {{faq.qus}}
+
+    {{faq.ans}}
+
+{% endfor %}
+
+galry 
+
+{% for image in image %}
+    <img alt="{{ image.description }}" src="{{ image.url }}"/>
+{% endfor %}
+
+item
+
+{% for item in item %}
+
+                <!-- Single Product Area -->
+                <div class="col-12 col-sm-6 col-md-12 col-xl-6 ">
+                    <div class="single-product-wrapper">
+                        <!-- Product Image -->
+                        <div class="product-img">
+
+                            {% with first_image=item.images.all.0 %}
+
+                            <a href="{% url 'shop:item_detail' item_id=item.id %}"><img src="{{first_image.image.url}}" alt="{{item.name}}"></a>
+                            {% endwith %}
+                            {% with secondimage=item.images.all.1 %}
+
+                            <a href="{% url 'shop:item_detail' item_id=item.id %}"><img class="hover-img" src="{{secondimage.image.url}}" alt="{{item.name}}"></a>
+                            {% endwith %}
+                        </div>
+
+                        <!-- Product Description -->
+                        <div class="product-description d-flex align-items-center justify-content-between">
+                            <!-- Product Meta Data -->
+                            <div class="product-meta-data">
+                                <div class="line"></div>
+                                <p class="product-price">
+                                    {% if item.disc > 0 %}
+                                        {% with discounted_price=item.price|calculate_discounted_price:item.disc|floatformat:2 %}
+                                                    <del>{{ item.price }} birr</del> <ins>${{ discounted_price }} birr</ins>
+                                        {% endwith %}
+                                    {% else %}
+                                      <ins>{{ item.price }} birr</ins>
+                                    {% endif %}                                       
+                                </p>
+                                <a href="{% url 'shop:item_detail' item_id=item.id %}">
+                                    <h6>{{item.name}}</h6>
+                                </a>
+                            </div>
+                            <!-- Ratings & Cart -->
+                            <div class="ratings-cart text-right">
+                                <div class="ratings">
+                                    {% with stars=item.average_rating|calculate_stars %}
+                                        {% for _ in "x"|ljust:stars.full_stars %}
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        {% endfor %}
+                                        {% if stars.half_star %}
+                                            <i class="bi-star-half"></i>
+                                        {% endif %}
+                                        {% for _ in "x"|ljust:stars.remaining_stars %}
+                                            <i class="bi-star"></i>
+                                        {% endfor %}
+                                    {% endwith %}
+                                </div>
+                                <div class="cart">
+                                    <a href="{% url 'shop:item_detail' item_id=item.id %}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+url list
+
+<li class="nav-item">
+<!-- Link--><a class="nav-link active" href="{% url 'web:index' %}">Home</a>
+</li>
+<li class="nav-item">
+<!-- Link--><a class="nav-link" href="{% url 'web:shop' %}">Shop</a>
+</li>
+<li class="nav-item">
+<!-- Link--><a class="nav-link" href="{% url 'shop:purchesed_list' %}">Product Order list</a>
+</li>
+</ul>
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="{% url 'shop:cart_list' %}"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small class="text-gray fw-normal"></small></a></li>
+{% if user.is_authenticated %}
+<li class="nav-item"><a class="nav-link" href="{% url 'shop:logout' %}"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Logout</a></li>
+
+{% else %}
+<li class="nav-item"><a class="nav-link" href="{% url 'shop:login' %}"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Login/register</a></li>
+{% endif %}
+
+type
+{% for i in type %}
+          <li class="mb-2"><a class="reset-anchor" href="{% url 'web:shop' %}?type={{ i.id }}">{{i.name}}</a></li>
+      {% endfor %}
+
+
+Blog
+{% for blog in hope.blog %}
+
+<div class="col-lg-6 d-flex align-items-stretch ftco-animate">
+<div class="blog-entry d-flex">
+    <a href="{% url 'web:blogdetial' blog.id %}" class="block-20 img" style="background-image: url('{{blog.image.url}}');">
+</a>
+<div class="text p-4 bg-light">
+    <div class="meta">
+        <p><span class="fa fa-calendar"></span> {{blog.date_posted}}</p>
+    </div>
+  <h3 class="heading mb-3"><a href="#">{{blog.title}}</a></h3>
+  <p>{{blog.dscription}}</p>
+  <a href="#" class="btn-custom">Continue <span class="fa fa-long-arrow-right"></span></a>
+
+</div>
+</div>
+</div>
+{% endfor %}
