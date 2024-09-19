@@ -640,7 +640,7 @@ def register_user(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, 'Registration successful.', extra_tags='alert-success')
-            return redirect('web:index')  # Redirect to dashboard or another page after successful login
+            return redirect('webpage:index')  # Redirect to dashboard or another page after successful login
     context =  {}
     context['social'] = wab.socilamedia_company.objects.all().order_by('-id')
     return render(request, 'register_user.html', context)
@@ -663,7 +663,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request, 'Login successful.', extra_tags='alert-success')
-            return redirect('web:index')  # Redirect to dashboard or another page after successful login
+            return redirect('webpage:index')  # Redirect to dashboard or another page after successful login
         messages.error(request, 'Invalid login credentials. Please try again.', extra_tags='alert-danger')
     context =  {}
     context['social'] = wab.socilamedia_company.objects.all().order_by('-id')
@@ -720,7 +720,7 @@ def add_delivery_address(request, orderid):
             additional_instructions=additional_instructions,
         )
 
-        return redirect('web:index')  # Redirect to an appropriate view after saving
+        return redirect('webpage:index')  # Redirect to an appropriate view after saving
 
     return render(request, 'add_delivery_address.html')
 
@@ -883,12 +883,12 @@ def shop_order(request):
 
             messages.success(request, " Thank you! Your request has been submitted successfully.Your information has been received. We will get back to you shortly.")
 
-            return redirect('web:index')  # Redirect to a success page
+            return redirect('webpage:index')  # Redirect to a success page
         except Item.DoesNotExist:
             print("someting went wrong")
 
             messages.success(request, "Oops! Something went wrong. Please try again later")
 
-            return redirect('web:index')  # Redirect to a success page
+            return redirect('webpage:index')  # Redirect to a success page
 
-    return redirect('web:index')
+    return redirect('webpage:index')

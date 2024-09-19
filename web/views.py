@@ -532,12 +532,12 @@ def user_login(request):
             user = form.get_user()
             login(request, user)
             print("SSSSSSSSSSSSSSSSSS")
-            return redirect('web:index')  # Change 'index' to your homepage URL name
+            return redirect('webpage:index')  # Change 'index' to your homepage URL name
         else:
             print("CCCCCCCCCCCC")
             print(form.errors)
             print(form.data)
-            return redirect('web:index')
+            return redirect('webpage:index')
 '''
     else:
         form = AuthenticationForm()
@@ -617,7 +617,7 @@ def landing(request):
     if fuc.chat:
         return redirect('web:chatindex')  # Redirect to a success page
     else:
-        return redirect('web:index')  # Redirect to a success page
+        return redirect('webpage:index')  # Redirect to a success page
 
 
 def chatindex(request):
@@ -930,9 +930,9 @@ def create_message(request):
 
         message.objects.create(name=name, email=email, about=about, description=description)
 
-        return redirect('web:index')  # Redirect to a success page
+        return redirect('webpage:index')  # Redirect to a success page
 
-    return redirect('web:index')
+    return redirect('webpage:index')
 
 
 def collect_email(request):
@@ -942,7 +942,7 @@ def collect_email(request):
             em = VisitorEmail.objects.get(email = email)
         except VisitorEmail.DoesNotExist:
             VisitorEmail.objects.create(email=email)
-        return redirect('web:index')
+        return redirect('webpage:index')
 
 @csrf_exempt  # Disable CSRF protection for this view (for demonstration purposes only)
 def order_service(request):
@@ -967,8 +967,8 @@ def order_service(request):
 
         messages.success(request, " Thank you! Your request has been submitted successfully.Your information has been received. We will get back to you shortly.")
 
-        return redirect('web:index')
-    return redirect('web:index')    
+        return redirect('webpage:index')
+    return redirect('webpage:index')    
 
 @csrf_exempt  # Disable CSRF protection for this view (for demonstration purposes only)
 def order_service_js(request):
@@ -1277,7 +1277,7 @@ def redirect_view(request, unique_id):
             link.access_count += 1
             link.save()
             # If 'prodact' is False, redirect to the index page (modify the URL as needed)
-            return redirect('web:index')
+            return redirect('webpage:index')
     
     except Link.DoesNotExist:
         # Handle the case when the link is not found
